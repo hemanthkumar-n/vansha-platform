@@ -2,65 +2,45 @@
 
 > Your family across generations.
 
-Vansha is a privacy-aware living family relationship intelligence platform designed to help families understand connections, collaboratively build trusted family networks, preserve legacy, and evolve into a family-centered social and events ecosystem.
+Vansha is a privacy-aware living family relationship intelligence platform.
 
-## What Vansha Is
-Vansha is not a static family tree builder.
+## Core Platform Pillars
+- relationship intelligence
+- collaborative family graph
+- privacy-first governance
+- identity trust architecture
+- cultural identity localization
+- family spaces architecture
+- permission-aware exploration
+- future events and social ecosystem
 
-Vansha is a living relationship graph platform.
-
-Core platform pillars:
-- Relationship intelligence
-- Collaborative family graph
-- Privacy-first family governance
-- Permission-aware graph exploration
-- Identity trust architecture
-- Family spaces architecture
-- Invite and profile claim workflows
-- Future events ecosystem
-- Future social relationship layer
-- Legacy preservation
-- AI-ready intelligence foundation
-
-## Core Architectural Concepts
-
+## Core Architecture Concepts
 ### Person != UserAccount != FamilySpace
-A real human can exist in Vansha without signing up.
+### Identity is trust-based, not surname-based
+### Identity is localization-aware
+### FamilySpace, not tree-per-user
+### Living relationship graph
+### Privacy-safe graph traversal
+### Family graph and social graph are distinct
 
-### Identity is Trust-Based
-Identity is never surname-based.
+## Localization Examples
+Supports flexible cultural identity models:
+- Telugu naming
+- Tamil naming
+- Western naming
+- patronymic naming cultures
+- custom naming models
 
-Trust signals include:
-- verified auth identity
-- invite lineage
-- DOB
-- relationship trust
-- ownership approvals
+## Product Roadmap
+- Phase 1: Relationship Intelligence MVP
+- Phase 2: Governance
+- Phase 3: Discoverable Family Network
+- Phase 4: Events
+- Phase 5: Social Layer
+- Phase 6: Legacy
+- Phase 7: AI Intelligence
 
-### FamilySpace, not Tree-per-User
-Vansha uses collaborative family spaces.
-
-### Living Relationship Graph
-Explicit relationship graph model.
-
-### Permission-Aware Graph Exploration
-Privacy-safe graph traversal.
-
-### Family Graph != Social Graph
-Separate family and social identity layers.
-
-## Product Evolution Roadmap
-
-### Phase 1 — Relationship Intelligence MVP
-### Phase 2 — Collaborative Family Governance
-### Phase 3 — Discoverable Family Network
-### Phase 4 — Family Events Ecosystem
-### Phase 5 — Family Social Layer
-### Phase 6 — Legacy Platform
-### Phase 7 — AI Family Intelligence
-
-## Planned Repository Structure
-
+## Planned Structure
 ```text
 vansha-platform/
 ├── docs/
@@ -71,18 +51,9 @@ vansha-platform/
 ```
 
 ## Technology Direction
-Frontend:
 - Flutter
-
-Backend:
 - Supabase
 - PostgreSQL
-
-## Engineering Principles
-- docs-first architecture
-- privacy-first governance
-- MVP discipline
-- modular architecture
 
 ## Current Status
 Architecture foundation active.
