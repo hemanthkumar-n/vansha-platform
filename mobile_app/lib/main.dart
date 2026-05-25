@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'features/onboarding/presentation/welcome_screen.dart';
 
 void main() {
   runApp(const VanshaApp());
@@ -12,12 +13,7 @@ class VanshaApp extends StatelessWidget {
     return MaterialApp(
       title: 'Vansha',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Vansha')),
-        body: const Center(
-          child: Text('Vansha foundation initialized'),
-        ),
-      ),
+      home: const WelcomeScreen(),
     );
   }
 }
