@@ -66,37 +66,99 @@ Existing tools are often limited to static genealogy trees without collaboration
 - Privacy-first family governance
 - Multicultural relationship modeling
 
-## Planned Architecture
+## Planned Platform Structure
 
 ```text
 vansha-platform/
+│
 ├── docs/
+│   ├── PRODUCT_VISION.md
+│   ├── STARTUP_THESIS.md
+│   ├── MVP_SCOPE.md
+│   ├── ROADMAP.md
+│   ├── ARCHITECTURE.md
+│   ├── DATA_MODEL.md
+│   ├── AUTH_MODEL.md
+│   ├── RELATIONSHIP_ENGINE.md
+│   ├── PRIVACY_MODEL.md
+│   ├── COLLABORATION_MODEL.md
+│   ├── SOCIAL_PLATFORM_VISION.md
+│   ├── EVENT_PLATFORM_VISION.md
+│   ├── LEGACY_PLATFORM_VISION.md
+│   ├── MONETIZATION.md
+│   ├── DECISIONS.md
+│   └── BACKLOG.md
+│
 ├── mobile_app/
+│   └── lib/
+│       ├── core/
+│       │   ├── config/
+│       │   ├── routing/
+│       │   ├── theme/
+│       │   ├── constants/
+│       │   ├── services/
+│       │   ├── utils/
+│       │   └── widgets/
+│       │
+│       ├── domain/
+│       │   ├── entities/
+│       │   ├── repositories/
+│       │   ├── usecases/
+│       │   └── value_objects/
+│       │
+│       ├── features/
+│       │   ├── auth/
+│       │   ├── onboarding/
+│       │   ├── family_graph/
+│       │   ├── profiles/
+│       │   ├── invitations/
+│       │   ├── relationship_engine/
+│       │   ├── collaboration/
+│       │   ├── social/
+│       │   ├── events/
+│       │   ├── legacy/
+│       │   ├── notifications/
+│       │   ├── search/
+│       │   └── settings/
+│       │
+│       └── main.dart
+│
 ├── backend/
+│   ├── db/
+│   │   ├── migrations/
+│   │   ├── schema/
+│   │   ├── seeds/
+│   │   └── policies/
+│   │
+│   ├── services/
+│   │   ├── auth/
+│   │   ├── family_graph/
+│   │   ├── relationship_engine/
+│   │   ├── collaboration/
+│   │   ├── events/
+│   │   ├── social/
+│   │   ├── notifications/
+│   │   ├── media/
+│   │   └── ai/
+│   │
+│   └── integrations/
+│       ├── whatsapp/
+│       ├── email/
+│       ├── sms/
+│       ├── calendar/
+│       └── push_notifications/
+│
 ├── shared/
+│   ├── schemas/
+│   ├── enums/
+│   ├── contracts/
+│   └── localization/
+│
 └── infra/
+    ├── supabase/
+    ├── ci_cd/
+    └── environments/
 ```
-
-## Documentation Strategy
-The `docs/` folder serves as the product and architecture source of truth.
-
-Planned documentation:
-- PRODUCT_VISION.md
-- STARTUP_THESIS.md
-- MVP_SCOPE.md
-- ROADMAP.md
-- ARCHITECTURE.md
-- DATA_MODEL.md
-- AUTH_MODEL.md
-- RELATIONSHIP_ENGINE.md
-- PRIVACY_MODEL.md
-- COLLABORATION_MODEL.md
-- SOCIAL_PLATFORM_VISION.md
-- EVENT_PLATFORM_VISION.md
-- LEGACY_PLATFORM_VISION.md
-- MONETIZATION.md
-- DECISIONS.md
-- BACKLOG.md
 
 ## Initial Technology Direction
 Frontend:
