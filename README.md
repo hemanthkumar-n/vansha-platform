@@ -1,4 +1,4 @@
-# Family Tree App
+# vansha platform 
 
 A culturally intelligent family tree platform focused on Indian family relationships.
 
