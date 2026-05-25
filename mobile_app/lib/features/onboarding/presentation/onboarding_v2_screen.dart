@@ -12,75 +12,90 @@ class _OnboardingV2ScreenState extends State<OnboardingV2Screen> {
   String selectedRelationship = 'Uncle';
   String selectedDisplayTerm = 'Mama';
 
+  Widget premiumField(String label) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: TextField(
+        decoration: InputDecoration(
+          labelText: label,
+          filled: true,
+          fillColor: Colors.white,
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(18)),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Vansha Onboarding V2')),
-      body: Stepper(
-        currentStep: currentStep,
-        onStepContinue: () {
-          if (currentStep < 4) {
-            setState(() => currentStep++);
-          }
-        },
-        onStepCancel: () {
-          if (currentStep > 0) {
-            setState(() => currentStep--);
-          }
-        },
-        steps: [
-          Step(
-            title: const Text('Identity'),
-            content: Column(
-              children: const [
-                TextField(decoration: InputDecoration(labelText: 'Legal Name')),
-                TextField(decoration: InputDecoration(labelText: 'Display Name')),
-                TextField(decoration: InputDecoration(labelText: 'Mother Tongue')),
-              ],
+      appBar: AppBar(title: const Text('Vansha Onboarding')),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFFF7F8FF), Color(0xFFEDE7FF)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Stepper(
+          elevation: 0,
+          currentStep: currentStep,
+          onStepContinue: () {
+            if (currentStep < 4) setState(() => currentStep++);
+          },
+          onStepCancel: () {
+            if (currentStep > 0) setState(() => currentStep--);
+          },
+          steps: [
+            Step(
+              title: const Text('Identity'),
+              content: Column(
+                children: [
+                  premiumField('Legal Name'),
+                  premiumField('Display Name'),
+                  premiumField('Mother Tongue'),
+                ],
+              ),
             ),
-          ),
-          Step(
-            title: const Text('Naming Intelligence'),
-            content: Column(
-              children: const [
-                TextField(decoration: InputDecoration(labelText: 'Naming Convention Notes')),
-              ],
+            Step(
+              title: const Text('Naming Intelligence'),
+              content: const Text('Support cultural naming conventions.'),
             ),
-          ),
-          Step(
-            title: const Text('Family Space'),
-            content: const TextField(
-              decoration: InputDecoration(labelText: 'Create Family Space'),
+            Step(
+              title: const Text('Family Space'),
+              content: premiumField('Family Space Name'),
             ),
-          ),
-          Step(
-            title: const Text('Immediate Family'),
-            content: const Text('Quick add father / mother / spouse / child / siblings'),
-          ),
-          Step(
-            title: const Text('Relationship Intelligence'),
-            content: Column(
-              children: [
-                DropdownButtonFormField<String>(
-                  value: selectedRelationship,
-                  items: ['Father', 'Mother', 'Uncle', 'Aunt', 'Brother', 'Sister']
-                      .map((e) => DropdownMenuItem(value: e, child: Text(e)))
-                      .toList(),
-                  onChanged: (value) => setState(() => selectedRelationship = value!),
-                  decoration: const InputDecoration(labelText: 'Relationship'),
-                ),
-                DropdownButtonFormField<String>(
-                  value: selectedDisplayTerm,
-                  items: ['Uncle', 'Mama', 'Mamaji', 'Babai', 'Machan', 'Chettan', 'Other']
-                      .map((e) => DropdownMenuItem(value: e, child: Text(e)))
-                      .toList(),
-                  onChanged: (value) => setState(() => selectedDisplayTerm = value!),
-                  decoration: const InputDecoration(labelText: 'How do you call them?'),
-                ),
-              ],
+            Step(
+              title: const Text('Immediate Family'),
+              content: const Text('Quick add setup coming next.'),
             ),
-          ),
-        ],
+            Step(
+              title: const Text('Relationship Intelligence'),
+              content: Column(
+                children: [
+                  DropdownButtonFormField<String>(
+                    value: selectedRelationship,
+                    decoration: const InputDecoration(labelText: 'Relationship'),
+                    items: ['Father', 'Mother', 'Uncle', 'Aunt', 'Brother', 'Sister']
+                        .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+                        .toList(),
+                    onChanged: (value) => setState(() => selectedRelationship = value!),
+                  ),
+                  const SizedBox(height: 12),
+                  DropdownButtonFormField<String>(
+                    value: selectedDisplayTerm,
+                    decoration: const InputDecoration(labelText: 'How do you call them?'),
+                    items: ['Uncle', 'Mama', 'Mamaji', 'Babai', 'Machan', 'Chettan', 'Other']
+                        .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+                        .toList(),
+                    onChanged: (value) => setState(() => selectedDisplayTerm = value!),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
