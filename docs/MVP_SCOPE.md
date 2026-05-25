@@ -1,19 +1,18 @@
-# MVP Scope
+# Vansha MVP Scope
 
-## Included in V1
-- User authentication
+## In Scope
+- Authentication
 - Self-first onboarding
-- Add parents, siblings, spouse, children, grandparents
-- Interactive family tree visualization
-- Person profile management
-- Invite family members
-- Profile claim flow
-- Relationship explainer
+- Family creation
+- Add family members
+- Relationship graph visualization
+- Relationship intelligence lookup
+- Invitations
+- Profile claim workflow
 
-## Excluded from V1
-- Chat/messaging
-- Social family feed
-- AI storytelling
-- Document vault
-- Photo scanning
-- Voice memories
+## Out of Scope
+- Social feed
+- Events platform
+- Legacy vault
+- AI intelligence
+- Premium monetization
