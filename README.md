@@ -3,120 +3,44 @@
 > Build, understand, and preserve your family network across generations.
 
 ## What is Vansha?
-Vansha is a modern family relationship platform.
+Vansha is a modern family relationship intelligence platform.
 
-It helps people:
-- build their family tree
-- understand family relationships
-- invite relatives to join
-- collaboratively grow family branches
-- protect privacy while sharing family information
-- preserve family history for future generations
+Beyond a family tree, Vansha understands relationships, culture, naming traditions, privacy, and family collaboration.
 
-This is not just a static family tree app.
+## Unique Vision
+Vansha is not just about names and connections.
 
-Vansha is being designed as a living family network.
-
-## The Problem We Are Solving
-Modern families often face:
-- disconnected relatives
-- fragmented WhatsApp groups
-- lost family history
-- confusion about extended relationships
-- no shared trusted family record
-
-Existing family tree tools are often static and hard to collaborate on.
-
-## How Vansha Works (Simple Concept)
-1. A user signs up
-2. Creates their family space
-3. Adds known relatives
-4. Invites family members to join
-5. Invited members claim their profiles
-6. Family branches grow collaboratively
-7. Privacy controls protect sensitive information
-
-## Core Ideas Behind Vansha
-### Family Spaces
-Families are collaborative spaces, not isolated personal trees.
+It is designed to understand:
+- family relationships
+- cultural naming conventions
+- regional relationship terms
+- privacy-controlled family branches
+- collaborative family ownership
+- future AI-assisted relationship intelligence
 
 Example:
-- Natakam Family
-- Doguparti Family
-- Wedding Event Space
+'Achan' may mean father in Malayalam.
+'Nanna' may mean father in Telugu.
+'Appa' may mean father in Tamil.
 
-### Relationship Graph
-Family relationships are connected as a living graph.
+Vansha is being designed to learn and understand these relationship terms over time.
 
-This allows family branches to expand naturally over time.
+## Core Product Concepts
+- relationship graph instead of static tree
+- collaborative family spaces
+- trust-based identity
+- cultural flexibility
+- privacy-first visibility
+- relationship linguistics intelligence
 
-### Privacy First
-Users control what others can see.
+## AI Evolution Direction
+Future Vansha AI can understand:
+- what a relationship term means
+- where it is culturally used
+- whether it is family-specific or widely used
+- relationship suggestions for future users
 
-Examples:
-- visible branch preview
-- restricted branch access
-- approval-based expansion
-
-### Trust-Based Identity
-Identity is verified through trusted signals.
-
-Not just names.
-
-This helps avoid fake claims and duplicate family members.
-
-### Cultural Flexibility
-Naming conventions differ globally.
-
-Examples:
-- Telugu naming
-- Tamil naming
-- Western naming
-- patronymic naming models
-
-Vansha is designed to support multiple cultural identity styles.
-
-## Product Roadmap
-### Phase 1 — MVP
-Core family relationship platform.
-
-Includes:
-- authentication
-- onboarding
-- family creation
-- add relatives
-- family tree visualization
-- invitations
-- profile claims
-- privacy controls
-
-### Future Phases
-- collaborative governance
-- discoverable family network
-- events and invitations
-- family social layer
-- legacy preservation
-- AI-powered family intelligence
-
-## Repository Structure
-```text
-vansha-platform/
-├── docs/        # architecture and product decisions
-├── mobile_app/  # Flutter application
-├── backend/     # APIs, services, database
-├── shared/      # common contracts and models
-└── infra/       # infrastructure setup
-```
-
-## Technology Direction
+## Current Stack
 - Flutter
 - Supabase
 - PostgreSQL
-
-## Current Status
-Documentation and architecture foundation in progress.
-Implementation scaffolding starts next.
-
-## Important Note
-Detailed architecture decisions live inside the `/docs` folder.
-This README is the simple public overview.
