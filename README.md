@@ -1,12 +1,134 @@
-# vansha platform 
+# Vansha Platform
 
-A culturally intelligent family tree platform focused on Indian family relationships.
+> Your family across generations.
 
-## Vision
-Build and preserve family legacy with relationship-aware family mapping, collaborative family management, and future social family interactions.
+Vansha is a future-ready private family intelligence, legacy, and social platform designed to help families understand relationships, preserve history, and stay connected across generations.
 
-## MVP
-- Self onboarding
-- Family relationship graph
-- Member invitations / claim flow
-- Profile management
+## Startup Vision
+Vansha is not just a family tree application.
+
+It is being architected as a scalable family platform combining:
+- Relationship intelligence
+- Family graph visualization
+- Collaborative family management
+- Private family social networking
+- Events and invitation management
+- Family legacy preservation
+- Multicultural relationship localization
+- Future AI-powered family intelligence
+
+## Problem Statement
+Modern families, especially diaspora families, face fragmented relationships, disconnected generations, scattered memories, and lack of structured family intelligence.
+
+Existing tools are often limited to static genealogy trees without collaboration, social interaction, or cultural relationship awareness.
+
+## Core Product Goals
+### Phase 1 (MVP)
+- Multi-provider authentication (Google, Apple, Phone OTP)
+- Self-first onboarding
+- Family member creation
+- Family graph visualization
+- Relationship intelligence engine
+- Profile ownership and claim workflow
+- Invitation-based family growth
+
+### Phase 2
+- Family collaboration and governance
+- Family profile ownership permissions
+- Shared editing workflows
+- Notifications and engagement loops
+
+### Phase 3
+- Private family social feed
+- Birthdays, anniversaries, memorial events
+- Wedding and family event invitations
+- Family group interactions
+
+### Phase 4
+- Legacy vault (stories, photos, memories, documents)
+- Heritage timeline
+- Voice memories
+- Family knowledge preservation
+
+### Phase 5
+- AI relationship explainer
+- Family storytelling intelligence
+- Cultural relationship interpretation
+- Heritage insights
+
+## Engineering Principles
+- Docs-first architecture
+- Product-first thinking
+- MVP implementation with future-ready design
+- Clean modular architecture
+- Proper semantic commit hygiene
+- No hardcoded short-term assumptions
+- Privacy-first family governance
+- Multicultural relationship modeling
+
+## Planned Architecture
+
+```text
+vansha-platform/
+├── docs/
+├── mobile_app/
+├── backend/
+├── shared/
+└── infra/
+```
+
+## Documentation Strategy
+The `docs/` folder serves as the product and architecture source of truth.
+
+Planned documentation:
+- PRODUCT_VISION.md
+- STARTUP_THESIS.md
+- MVP_SCOPE.md
+- ROADMAP.md
+- ARCHITECTURE.md
+- DATA_MODEL.md
+- AUTH_MODEL.md
+- RELATIONSHIP_ENGINE.md
+- PRIVACY_MODEL.md
+- COLLABORATION_MODEL.md
+- SOCIAL_PLATFORM_VISION.md
+- EVENT_PLATFORM_VISION.md
+- LEGACY_PLATFORM_VISION.md
+- MONETIZATION.md
+- DECISIONS.md
+- BACKLOG.md
+
+## Initial Technology Direction
+Frontend:
+- Flutter (mobile-first)
+
+Backend:
+- Supabase
+- PostgreSQL
+
+Architecture Concepts:
+- UserAccount != Person
+- Phone != identity
+- Canonical relationship graph
+- Localization layer for relationship naming
+- Global-ready platform design
+
+## Execution Model
+Founder / Product Vision:
+- Business vision
+- Product direction
+- Strategic decisions
+
+AI Product Architecture:
+- Product architecture
+- System design
+- Documentation governance
+- Startup strategy validation
+
+Engineering Execution:
+- Implementation via code generation and iterative delivery
+
+## Current Status
+Repository initialized.
+Architecture foundation in progress.
+Platform documentation-first build underway.
