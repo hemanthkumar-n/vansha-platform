@@ -6,34 +6,88 @@ import '../../../../core/theme/app_colors.dart';
 class FamilyTreeScreen extends StatelessWidget {
   const FamilyTreeScreen({super.key});
 
-  Widget personNode(String name,
-      {bool center = false, IconData icon = Icons.person, bool locked = false}) {
+  Widget personNode({
+    required String name,
+    required String relationship,
+    required String knownAs,
+    required IconData icon,
+    bool center = false,
+  }) {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+        width: center ? 180 : 160,
+        padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
           gradient: center
-              ? const LinearGradient(colors: [Colors.deepPurple, Colors.blue])
-              : const LinearGradient(colors: [Colors.white, Color(0xFFF8F9FF)]),
+              ? const LinearGradient(
+                  colors: [Colors.deepPurple, Colors.blue],
+                )
+              : const LinearGradient(
+                  colors: [Colors.white, Color(0xFFF7F8FF)],
+                ),
           borderRadius: BorderRadius.circular(24),
-          boxShadow: const [BoxShadow(blurRadius: 16, color: Colors.black12)],
-          border: Border.all(color: Colors.white70),
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 16,
+              color: Colors.black12,
+            )
+          ],
         ),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
             CircleAvatar(
-              radius: center ? 26 : 20,
-              child: Icon(locked ? Icons.lock : icon),
+              radius: center ? 28 : 22,
+              child: Icon(icon),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 10),
+
             Text(
               name,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: center ? Colors.white : Colors.black87,
                 fontWeight: FontWeight.bold,
+                fontSize: center ? 16 : 14,
+              ),
+            ),
+
+            const SizedBox(height: 8),
+
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              decoration: BoxDecoration(
+                color: center
+                    ? Colors.white24
+                    : Colors.deepPurple.withOpacity(0.08),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                relationship,
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: center ? Colors.white : Colors.deepPurple,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 8),
+
+            Text(
+              "Known As",
+              style: TextStyle(
+                fontSize: 10,
+                color: center ? Colors.white70 : Colors.grey,
+              ),
+            ),
+
+            Text(
+              knownAs,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: center ? Colors.white : Colors.black87,
               ),
             ),
           ],
@@ -52,27 +106,22 @@ class FamilyTreeScreen extends StatelessWidget {
     final spouse = Node.Id('spouse');
     final child = Node.Id('child');
     final sibling = Node.Id('sibling');
-    final locked = Node.Id('locked');
 
     graph.addEdge(father, center);
     graph.addEdge(mother, center);
     graph.addEdge(center, spouse);
     graph.addEdge(center, child);
     graph.addEdge(center, sibling);
-    graph.addEdge(spouse, locked);
 
     final builder = BuchheimWalkerConfiguration()
-      ..siblingSeparation = 60
-      ..levelSeparation = 90
-      ..subtreeSeparation = 70;
+      ..siblingSeparation = 70
+      ..levelSeparation = 100
+      ..subtreeSeparation = 80;
 
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: const Text('Vansha Founder Experience'),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.person_add)),
-        ],
+        title: const Text('Vansha Family Graph'),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},
@@ -86,25 +135,63 @@ class FamilyTreeScreen extends StatelessWidget {
         maxScale: 3,
         child: GraphView(
           graph: graph,
-          algorithm: BuchheimWalkerAlgorithm(builder, TreeEdgeRenderer(builder)),
+          algorithm: BuchheimWalkerAlgorithm(
+            builder,
+            TreeEdgeRenderer(builder),
+          ),
           builder: (Node node) {
             switch (node.key?.value) {
               case 'father':
-                return personNode('Rajesh Rao', icon: Icons.man);
+                return personNode(
+                  name: 'Natakam Malakonda Prasad',
+                  relationship: 'Father',
+                  knownAs: 'Nanna',
+                  icon: Icons.man,
+                );
+
               case 'mother':
-                return personNode('Priya Rao', icon: Icons.woman);
+                return personNode(
+                  name: 'Sudharani',
+                  relationship: 'Mother',
+                  knownAs: 'Amma',
+                  icon: Icons.woman,
+                );
+
               case 'center':
-                return personNode('Arjun Rao', center: true, icon: Icons.star);
+                return personNode(
+                  name: 'Hemanth Kumar',
+                  relationship: 'YOU',
+                  knownAs: 'Hemanth',
+                  icon: Icons.star,
+                  center: true,
+                );
+
               case 'spouse':
-                return personNode('Lakshmi Rao', icon: Icons.favorite);
+                return personNode(
+                  name: 'Keerthi Doguparti',
+                  relationship: 'Spouse',
+                  knownAs: 'Keerthi',
+                  icon: Icons.favorite,
+                );
+
               case 'child':
-                return personNode('Rohan Rao', icon: Icons.child_care);
+                return personNode(
+                  name: 'Yuvan Simha',
+                  relationship: 'Son',
+                  knownAs: 'Yuvan',
+                  icon: Icons.child_care,
+                );
+
               case 'sibling':
-                return personNode('Divya Bharati', icon: Icons.people);
-              case 'locked':
-                return personNode('Private Branch', locked: true);
+                return personNode(
+                  name: 'Divya Bharathi',
+                  relationship: 'Sibling',
+                  knownAs: 'Akka',
+                  icon: Icons.people,
+                );
+
               default:
-                return personNode('Unknown');
+                return const SizedBox.shrink();
             }
           },
         ),
