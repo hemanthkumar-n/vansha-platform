@@ -1,11 +1,12 @@
 class FamilyUnit {
   final String id;
-  final String partner1;
-  final String partner2;
+
+  final String partner1Id;
+  final String partner2Id;
 
   const FamilyUnit({
     required this.id,
-    required this.partner1,
-    required this.partner2,
+    required this.partner1Id,
+    required this.partner2Id,
   });
 }

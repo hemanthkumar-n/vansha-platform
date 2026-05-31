@@ -1,8 +1,11 @@
 class GraphPerson {
   final String id;
   final String name;
+
   final String? knownAs;
+
   final String relationship;
+
   final String status;
 
   const GraphPerson({
@@ -10,6 +13,6 @@ class GraphPerson {
     required this.name,
     this.knownAs,
     required this.relationship,
-    this.status = 'placeholder',
+    this.status = 'unclaimed',
   });
 }
